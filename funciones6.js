@@ -18,6 +18,7 @@ function evolveCharacter(character, maxEvolution = 3) {
 
     function atacar(defendant, attacker, attackerDirection = 'left') {
         //Defendant variables
+        let buttons = document.getElementById('container-buttons');
         let defendantElement = document.getElementById(defendant);
         let defendantElementLifeBar = defendantElement
             .nextElementSibling
@@ -28,6 +29,18 @@ function evolveCharacter(character, maxEvolution = 3) {
         let currentLifePercentaje = defendantElementLifeBar.style.width;
         let currentLife = currentLifePercentaje.substring(0, currentLifePercentaje.length - 1);
         let newLife = getNewLife(currentLife);
+        
+        if (newLife <= 0) {
+            declareWinner(defendantElement, attacker, buttons)
+        }
+
+        if (newLife < 60 && newLife > 25) {
+            defendantElementLifeBar.classList.remove('bg-warning');
+            defendantElementLifeBar.classList.add('bg-error');
+        } else if (newLife <= 25) {
+            defendantElementLifeBar.classList.remove('bg-error');
+            defendantElementLifeBar.classList.add('bg-danger');
+        }
     
         defendantElementLifeBar.style.width = `${newLife}%`;
         defendantElementLifeBar.innerText = `${newLife}%`;
@@ -62,9 +75,26 @@ function evolveCharacter(character, maxEvolution = 3) {
     }
 
     function getNewLife(previousLife) {
-        return Number(previousLife) - getRandomInt(25);
+        let newLife = Number(previousLife) - getRandomInt(25);
+        if(newLife >= 0){
+            return newLife;
+        } else {
+            return 0;
+        }
     };
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     };
+
+    function declareWinner(defendantElement, attacker, buttons) {
+        let h2Tag = document.createElement('h2');
+
+        buttons.innerHTML = null;
+        h2Tag.classList.add('mt-3', 'px-4', 'py-3', 'rounded');
+        //Agregar estilos del h2 en la linea de arriba
+        h2Tag.innerHTML = 'Felicidades, ' + attacker + ' ha sido el ganador';
+        defendantElement.src = './images/rip.png';
+        buttons.appendChild(h2Tag);
+        setAndRemoveAnimationClass(h2Tag, 'animate__shakeY');
+    }
