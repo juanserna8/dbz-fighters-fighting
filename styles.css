@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+.barraNav {
+    margin-top: 20px;
+    width: 40%;
+    color: white;
+}
+
+.mainContainer{
+    margin-top: 5rem;
+    color: white;
+    font-size: large;
+}
+
+.mainContainer h1{
+    color: #F08C13;
+    /*font-family: 'Luckiest Guy';*/
+    font-family: 'Passion one';
+}
+
+#boton{
+    background: #F08C13;
+    color: white;
+}
+
+aside img{
+    max-width: 350px;
+}
+
+.esfera{
+    max-width: 50px;
+    max-height: 50px;
+    margin-top: -12rem;
+}
+
+.menu-icon{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
