@@ -91,7 +91,8 @@ function evolveCharacter(character, maxEvolution = 3) {
         let h2Tag = document.createElement('h2');
 
         buttons.innerHTML = null;
-        h2Tag.classList.add('mt-3', 'px-4', 'py-3', 'rounded');
+        h2Tag.classList.add('mt-3', 'py-3', 'rounded');
+        h2Tag.style.color = '#F08C13';
         //Agregar estilos del h2 en la linea de arriba
         h2Tag.innerHTML = 'Felicidades, ' + attacker + ' ha sido el ganador';
         defendantElement.src = './images/rip.png';
