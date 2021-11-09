@@ -45,12 +45,12 @@ nav ul li a:hover, nav ul li i:hover {
     font-size: 0.8rem;
 }
 
-#boton{
+#firstCharacterEvolve{
     background: #F08C13;
     color: white;
 }
 
-#boton2 {
+#secondCharacterEvolve {
     background: #00D1DF;
     color: white;
 }

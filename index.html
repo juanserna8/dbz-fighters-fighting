@@ -46,48 +46,50 @@
                 <div id="container-buttons">
                     <div class="row">
                         <div class="col-6 py-4">
-                            <button id='boton' class="btn fw-bold w-100" onclick="evolveCharacter('goku')" value="change"><i class="bi bi-capslock-fill"></i> Goku</button>
+                            <button
+                                id='firstCharacterEvolve' 
+                                class="btn fw-bold w-100" 
+                                value="change"
+                            >
+                                <!-- onclick="evolveCharacter('goku')"  -->
+                                <i class="bi bi-capslock-fill"></i> Goku
+                            </button>
                         </div>
                         <div class="col-6 py-4">
-                            <button id='boton2' class="btn fw-bold w-100" onclick="evolveCharacter('vegeta', 2)" value="change"> <i class="bi bi-capslock-fill"></i> Vegeta</button>
+                            <button 
+                                id='secondCharacterEvolve' 
+                                class="btn fw-bold w-100" 
+                                value="change"
+                            > 
+                                <i class="bi bi-capslock-fill"></i> Vegeta
+                            </button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6 py-2">
-                            <button id="atacar1" class="btn fw-bold w-100" onclick="atacar('vegeta', 'goku', 'right')" value="change"><img src="https://img.icons8.com/ios-filled/50/ffffff/sword.png" style="height: 18px; margin-right: 3px;"/>Atacar</button>
+                            <button 
+                                id="atacar1" 
+                                class="btn fw-bold w-100" 
+                                value="change">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/sword.png" style="height: 18px; margin-right: 3px;"/>Atacar
+                            </button>
                         </div>
                         <div class="col-6 py-2">
-                            <button id="atacar2" class="btn fw-bold w-100" onclick="atacar('goku', 'vegeta', 'left')" value="change"> <img src="https://img.icons8.com/ios-filled/50/ffffff/sword.png" style="height: 18px; margin-right: 3px;"/>Atacar</button>
+                            <button id="atacar2" class="btn fw-bold w-100" value="change"> <img src="https://img.icons8.com/ios-filled/50/ffffff/sword.png" style="height: 18px; margin-right: 3px;"/>Atacar</button>
                         </div>
                     </div>
                 </div>
             </article>
 
             <div class="contenedorAside col-md-7 col-12">
-                <div class="row justify-content-center gx-6">
-                    <aside id="aside1" class="col-md-5 col-6 text-center">
-                        <img src="./images/characters/goku/evolution-1.png " class="img-fluid" alt="Goku" id="goku" style="max-height: 15rem;">
-                        <div class="contenedorBarra1 col-12 pt-3">
-                            <div class="progress">
-                                <div id="barra1" class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 100%;">100%</div>
-                            </div>
-                        </div>    
-                    </aside>
-            
-                    <aside id="aside2" class="col-md-5 col-6 text-center">
-                        <img src="./images/characters/vegeta/evolution-1.png" class="img-fluid" alt="vegeta" id="vegeta" style="max-height: 15rem;">
-                        <div class="contenedorBarra2 col-12 pt-3">
-                            <div class="progress">
-                                <div id="barra2" class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"  style="width: 100%;">100%</div>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
+                
+                <div 
+                    id="imagesContainer" 
+                    class="row justify-content-center gx-6"
+                >
 
-                <div id="contenedorBarras" class="row">
-                   
-                    
                 </div>
+            
             </div> 
         </div>
     </div>
@@ -96,10 +98,10 @@
         <div class="container">          
             <ul class="list-unstyled">
               <li class="row-auto">
-                <i class="bi bi-facebook"></i>
+                <i id="createGoku" class="bi bi-facebook"></i>
               </li>
               <li class="row-auto">
-                <i class="bi bi-instagram"></i>
+                <i id="createVegeta" class="bi bi-instagram"></i>
               </li>
               <li class="row-auto">
                 <i class="bi bi-twitter"></i>
@@ -109,6 +111,6 @@
       </footer>
 
       <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-      <script src="index.js"></script>
+      <script src="index.js" type="module"></script>
 </body>
 </html>
